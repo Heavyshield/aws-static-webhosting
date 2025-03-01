@@ -1,0 +1,17 @@
+variable "aws_region" {
+  description = "AWS region to deploy resources"
+  type        = string
+  default     = "XXXXXXXXXXXXXXXXXXX"
+}
+
+variable "bucket_name" {
+  description = "Name of the S3 bucket for static website hosting, should match your domain like example.com"
+  type        = string
+  default     = "XXXXXXXXXXXXXXXXXXX"
+}
+
+variable "certificate_arn" {
+  description = "ARN of the ACM certificate for CloudFront distribution"
+  type        = string
+  default     = "XXXXXXXXXXXXXXXXXXX"
+}
