@@ -43,6 +43,10 @@ terraform apply
 Once the infrastructure is deployed, you can:
 
 1. Upload your static website files to the S3 bucket, you can upload the index.html as an example.
+2. In case index.html do not refresh properly, you can force a cache invalidation directly from the cloudfront distribution and as path use
+```bash
+/*
+```
 
 ## License
 

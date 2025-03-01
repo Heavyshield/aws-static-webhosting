@@ -8,6 +8,7 @@ resource "aws_s3_bucket" "website_bucket" {
   
   tags = {
     Name = "Static Website Bucket"
+    git  = "https://github.com/Heavyshield/aws-static-webhosting"
   }
 }
 
@@ -105,12 +106,18 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
 
   tags = {
     Name = "Static Website CloudFront Distribution"
+    git  = "https://github.com/Heavyshield/aws-static-webhosting"
   }
 }
 
 # Import the Route 53 hosted zone
 resource "aws_route53_zone" "primary" {
   name    = var.bucket_name
+  
+  tags = {
+    Name = "Static Website Hosted Zone"
+    git  = "https://github.com/Heavyshield/aws-static-webhosting"
+  }
 }
 
 # Create an A record pointing to the CloudFront distribution
